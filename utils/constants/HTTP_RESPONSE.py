@@ -1,0 +1,25 @@
+SUCCESS = {
+    'STATUS':'SUCCESS',
+    'CODE':200,
+    'HTTP_CODE':200
+}
+CREATED = {
+    'STATUS':'CREATED',
+    'CODE':201,
+    'HTTP_CODE':201
+}
+FAILED = {
+    'STATUS':'FAILED',
+    'CODE':400,
+    'HTTP_CODE':200
+}
+NOT_FOUND = {
+    'STATUS':'NOT_FOUND',
+    'CODE':404,
+    'HTTP_CODE':404
+}
+ERROR = {
+    'STATUS':'ERROR',
+    'CODE':500,
+    'HTTP_CODE':500
+}
