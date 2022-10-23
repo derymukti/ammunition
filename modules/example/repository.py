@@ -18,6 +18,10 @@ def update(id,data):
     db.session.refresh(query)
     return query
 
+def detail(id):
+    query = Result.query.filter_by(id=id).first()
+    return query
+
 def list_data(page,per_page):
     result=Result.query.paginate(page=page,per_page=per_page)
     return result

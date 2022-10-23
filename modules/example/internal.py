@@ -14,6 +14,13 @@ class Internal:
         result = Delegate().update(id,data)
         return response.detail_response(data=CreateRequestDTO.from_orm(result).dict())
 
+    def detail(self,id):
+        try:
+            result = Delegate().detail(id)
+            return response.detail_response(data=CreateRequestDTO.from_orm(result).dict())
+        except Exception:
+            abort(404)
+            
     def list_data(self):
         try:
             try:

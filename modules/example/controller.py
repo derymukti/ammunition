@@ -20,6 +20,12 @@ def create_controller(body: CreateRequestDTO):
 def update_controller(id: int, body: CreateRequestDTO):
     return Internal().update(id,body)
 
+@example.route('/<id>',methods=['GET'])
+@validation_response
+@validate()
+def detail_controller(id: int):
+    return Internal().detail(id)
+
 @example.route('',methods=['GET'])
 def list_controller():
     return Internal().list_data()
