@@ -29,3 +29,9 @@ def detail_controller(id: int):
 @example.route('',methods=['GET'])
 def list_controller():
     return Internal().list_data()
+
+@example.route('/<id>',methods=['DELETE'])
+@validation_response
+@validate()
+def delete_controller(id: int):
+    return Internal().delete(id)

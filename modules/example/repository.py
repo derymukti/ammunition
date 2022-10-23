@@ -25,3 +25,9 @@ def detail(id):
 def list_data(page,per_page):
     result=Result.query.paginate(page=page,per_page=per_page)
     return result
+
+def delete(id):
+    query = Result.query.filter_by(id=id).delete()
+    print(query)
+    db.session.commit()
+    return query

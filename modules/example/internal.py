@@ -20,7 +20,7 @@ class Internal:
             return response.detail_response(data=CreateRequestDTO.from_orm(result).dict())
         except Exception:
             abort(404)
-            
+
     def list_data(self):
         try:
             try:
@@ -35,3 +35,8 @@ class Internal:
         except Exception:
             abort(400)
         
+    def delete(self,id):
+        result = Delegate().delete(id)
+        if not result:
+            abort(400)
+        return response.detail_response("OK")
